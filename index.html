@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>인사혁신처 | MPM 대한민국 공직 인사 혁신 포털</title>
+  <meta name="description" content="대한민국 인사혁신처 공식 국민 안내 포털 - 신뢰받는 공무원, 일 잘하는 정부를 위한 차세대 공직 플랫폼">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome 6 Pro Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Pretendard & Plus Jakarta Sans & Playfair Display / Cormorant for luxury touch -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'Pretendard', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#fff8f1',
+              100: '#feeedb',
+              200: '#fed7b2',
+              300: '#fdb77f',
+              400: '#fb8c47',
+              500: '#f9651a',
+              600: '#ea4a0c', // Pure Radiant Hermes-style Orange
+              700: '#c2340a',
+              800: '#9a2a10',
+              900: '#7c2511',
+              950: '#430f06',
+            },
+            noir: {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              800: '#1e2532',
+              850: '#151b26',
+              900: '#0b0f19',
+              950: '#06080e', // Deep Obsidian
+            }
+          },
+          boxShadow: {
+            'luxury': '0 20px 50px -15px rgba(234, 74, 12, 0.12), 0 0 1px 1px rgba(0,0,0,0.03)',
+            'luxury-dark': '0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 1px 1px rgba(255,255,255,0.05)',
+            'glow-gold': '0 0 50px -10px rgba(249, 101, 26, 0.35)',
+            'glow-subtle': '0 0 35px -5px rgba(249, 101, 26, 0.18)',
+            'inner-bevel': 'inset 0 1px 1px 0 rgba(255, 255, 255, 0.6), inset 0 -1px 1px 0 rgba(0, 0, 0, 0.05)',
+            'inner-bevel-dark': 'inset 0 1px 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 1px 0 rgba(0, 0, 0, 0.5)',
+          },
+          animation: {
+            'float-smooth': 'floatSmooth 7s ease-in-out infinite',
+            'float-subtle': 'floatSubtle 10s ease-in-out infinite reverse',
+            'pulse-glow': 'pulseGlow 5s ease-in-out infinite',
+          },
+          keyframes: {
+            floatSmooth: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            floatSubtle: {
+              '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+              '50%': { transform: 'translateY(-6px) rotate(0.5deg)' },
+            },
+            pulseGlow: {
+              '0%, 100%': { opacity: '0.45', transform: 'scale(1)' },
+              '50%': { opacity: '0.75', transform: 'scale(1.04)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* 서브픽셀 렌더링 및 폰트 매끄러움 */
+    * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* 노이즈 질감 오버레이 (하이엔드 아날로그 텍스처) */
+    .bg-noise {
+      background-image: radial-gradient(rgba(249, 101, 26, 0.04) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+    .dark .bg-noise {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+
+    /* 하이엔드 글래스모피즘 */
+    .glass-spec {
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+    .dark .glass-spec {
+      background: rgba(11, 15, 25, 0.72);
+      backdrop-filter: blur(24px) saturate(190%);
+      -webkit-backdrop-filter: blur(24px) saturate(190%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* 오렌지 골드 메탈릭 텍스트 그라디언트 */
+    .text-metallic-orange {
+      background: linear-gradient(135deg, #ea4a0c 0%, #f9651a 35%, #d97706 70%, #b45309 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .text-metallic-hero {
+      background: linear-gradient(145deg, #ffffff 20%, #ffedd5 65%, #fed7aa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* 하이엔드 카드 인터랙션 */
+    .luxury-card {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .luxury-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 45px -12px rgba(234, 74, 12, 0.16);
+      border-color: rgba(249, 101, 26, 0.35);
+    }
+    .dark .luxury-card:hover {
+      box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.9), 0 0 25px -5px rgba(234, 74, 12, 0.2);
+      border-color: rgba(249, 101, 26, 0.45);
+    }
+
+    /* 앰비언트 글로우 블러 */
+    .ambient-glow {
+      position: absolute;
+      border-radius: 9999px;
+      filter: blur(140px);
+      pointer-events: none;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body class="font-sans bg-[#FBFBFC] dark:bg-[#06080E] text-slate-800 dark:text-slate-100 antialiased flex flex-col min-h-screen selection:bg-brand-500 selection:text-white transition-colors duration-500 bg-noise">
+
+  <!-- 1. 최상단 프레스티지 공공 가이드 바 -->
+  <aside class="relative z-50 bg-[#090C15] text-slate-400 text-[11px] py-2 px-4 sm:px-8 border-b border-white/[0.06] tracking-tight">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="flex items-center gap-2.5">
+        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-bold tracking-widest bg-brand-500/15 text-brand-400 border border-brand-500/25">GOV</span>
+        <span class="text-slate-300 font-medium tracking-tight">대한민국 국무총리 직속 중앙인사관장기관</span>
+        <span class="hidden sm:inline-block text-slate-600">/</span>
+        <span class="hidden sm:inline-block text-slate-400 text-[10px]">인사혁신처 공식 대국민 가이드</span>
+      </div>
+      <div class="flex items-center gap-5 text-xs font-medium">
+        <a href="#faq" class="hover:text-brand-300 transition-colors">주요 질의응답 (FAQ)</a>
+        <span class="text-slate-700">|</span>
+        <a href="https://www.mpm.go.kr" target="_blank" class="text-brand-400 hover:text-white flex items-center gap-1.5 transition-colors font-semibold group">
+          <span>공식 포털 바로가기</span>
+          <i class="fa-solid fa-arrow-up-right-from-square text-[9px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 2. 프리미엄 글래스모피즘 네비게이션 헤더 -->
+  <header class="sticky top-0 z-40 glass-spec border-b border-slate-200/60 dark:border-white/[0.08] transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-22 flex items-center justify-between">
+      
+      <!-- 기관 로고 영역 (최고급 브랜딩) -->
+      <a href="#" class="flex items-center gap-4 group" aria-label="인사혁신처 홈">
+        <div class="relative py-1">
+          <!-- 주간 모드 공식 로고 -->
+          <img src="logo_mpm.png" alt="인사혁신처" class="h-10 sm:h-12 w-auto object-contain dark:hidden group-hover:scale-[1.02] transition-transform duration-300">
+          <!-- 야간 모드 공식 로고 (화이트) -->
+          <img src="logo_mpm_white.png" alt="인사혁신처" class="h-10 sm:h-12 w-auto object-contain hidden dark:block group-hover:scale-[1.02] transition-transform duration-300">
+        </div>
+        <div class="hidden md:flex flex-col border-l border-slate-200/80 dark:border-white/10 pl-4 justify-center">
+          <div class="flex items-center gap-2">
+            <span class="font-display font-extrabold text-[11px] tracking-widest text-brand-600 dark:text-brand-400 uppercase">Ministry of Personnel Management</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-500 animate-pulse"></span>
+          </div>
+          <span class="text-xs font-medium text-slate-500 dark:text-slate-400 tracking-tight mt-0.5">차세대 공직 인사 혁신 플랫폼</span>
+        </div>
+      </a>
+
+      <!-- 데스크톱 프레스티지 내비게이션 -->
+      <nav class="hidden lg:flex items-center space-x-1 font-medium text-sm text-slate-600 dark:text-slate-300">
+        <a href="#about" class="px-4 py-2.5 rounded-xl hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100/70 dark:hover:bg-white/[0.04] transition-all">기관 소개</a>
+        <a href="#citizen-services" class="px-4 py-2.5 rounded-xl text-brand-600 dark:text-brand-400 font-bold bg-brand-500/10 dark:bg-brand-500/15 transition-all">맞춤 가이드</a>
+        <a href="#core-services" class="px-4 py-2.5 rounded-xl hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100/70 dark:hover:bg-white/[0.04] transition-all">4대 핵심 업무</a>
+        <a href="#faq" class="px-4 py-2.5 rounded-xl hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100/70 dark:hover:bg-white/[0.04] transition-all">궁금증 해결</a>
+        <a href="#quick-links" class="px-4 py-2.5 rounded-xl hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100/70 dark:hover:bg-white/[0.04] transition-all">패밀리 서비스</a>
+      </nav>
+
+      <!-- 우측 컨트롤 박스: 야간 모드 토글 + 주요 행동 유도(CTA) -->
+      <div class="flex items-center gap-3">
+        <!-- 테마 전환 버튼 (골드 메탈릭 토글) -->
+        <button id="themeToggleBtn" onclick="toggleDarkMode()" class="p-2.5 sm:px-3 sm:py-2 rounded-2xl border border-slate-200/80 dark:border-white/10 bg-white/80 dark:bg-noir-900/80 text-slate-700 dark:text-brand-300 hover:border-brand-500/40 hover:bg-brand-50/50 dark:hover:bg-white/[0.06] transition-all flex items-center gap-2 text-xs font-semibold shadow-sm" aria-label="다크 모드 전환">
+          <i id="themeIcon" class="fa-solid fa-moon text-sm"></i>
+          <span id="themeText" class="hidden sm:inline">야간 모드</span>
+        </button>
+
+        <!-- 사이트 내 핵심 CTA (샤이니 골드 버튼) -->
+        <a href="https://www.gosi.kr" target="_blank" class="hidden sm:inline-flex items-center gap-2.5 px-5 py-2.5 rounded-2xl bg-gradient-to-r from-brand-600 via-brand-500 to-amber-600 hover:from-brand-500 hover:to-amber-500 text-white font-bold text-xs tracking-tight shadow-glow-subtle hover:shadow-glow-gold transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
+          <i class="fa-solid fa-stamp text-[11px]"></i>
+          <span>국가공무원 채용 접수</span>
+        </a>
+
+        <!-- 모바일 메뉴 버튼 -->
+        <button id="mobileMenuBtn" class="lg:hidden p-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/[0.06] transition-colors">
+          <i class="fa-solid fa-bars-staggered text-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- 모바일 드롭다운 메뉴 -->
+    <div id="mobileMenu" class="hidden lg:hidden glass-spec bg-white/95 dark:bg-noir-950/95 border-t border-slate-200/80 dark:border-white/10 px-6 py-5 space-y-3 font-medium text-sm">
+      <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 dark:text-slate-200 hover:text-brand-600">기관 소개</a>
+      <a href="#citizen-services" onclick="toggleMobileMenu()" class="block py-2 text-brand-600 dark:text-brand-400 font-bold">맞춤 가이드 (당신에게 필요한 정보)</a>
+      <a href="#core-services" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 dark:text-slate-200 hover:text-brand-600">인사혁신처 4대 핵심 업무</a>
+      <a href="#faq" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 dark:text-slate-200 hover:text-brand-600">자주 묻는 질문(FAQ)</a>
+      <a href="#quick-links" onclick="toggleMobileMenu()" class="block py-2 text-slate-700 dark:text-slate-200 hover:text-brand-600">패밀리 서비스 바로가기</a>
+      <div class="pt-3 border-t border-slate-200 dark:border-slate-800">
+        <a href="https://www.gosi.kr" target="_blank" class="w-full inline-flex justify-center items-center gap-2 py-3 rounded-xl bg-brand-600 text-white font-bold text-xs shadow-md">
+          국가공무원채용시스템 바로가기
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. 프레스티지 히어로 섹션 (오라 그라디언트 & 하이테크 인포그래픽) -->
+  <section class="relative pt-16 pb-24 lg:pt-24 lg:pb-36 overflow-hidden bg-gradient-to-b from-[#101422] via-[#0B0E1A] to-[#06080E] text-white">
+    <!-- 정교한 앰비언트 오로라 라이트 -->
+    <div class="ambient-glow w-[600px] h-[600px] bg-brand-600/25 top-[-100px] right-[-100px] animate-pulse-glow"></div>
+    <div class="ambient-glow w-[500px] h-[500px] bg-amber-500/20 bottom-[-50px] left-[-150px]"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+        
+        <!-- 좌측: 최고급 타이포그래피 & 핵심 가치 -->
+        <div class="lg:col-span-7 text-left">
+          <!-- 럭셔리 배지 태그 -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/[0.08] backdrop-blur-xl border border-white/15 text-xs font-semibold mb-8 shadow-inner">
+            <span class="w-2 h-2 rounded-full bg-brand-400 animate-ping"></span>
+            <span class="text-orange-200 tracking-wide font-medium">국민의 신뢰 위에 세우는 대한민국 공직의 미래</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.12] font-display">
+            신뢰받는 공무원,<br>
+            <span class="text-metallic-hero">일 잘하는 정부</span>를<br class="hidden sm:inline">
+            완성합니다.
+          </h1>
+
+          <p class="mt-7 text-base sm:text-lg text-slate-300/90 leading-relaxed font-normal max-w-2xl">
+            공정한 시험 선발부터 AI·디지털 미래 인재 육성, 엄격한 공직 윤리와 청렴성, 
+            국민에게 안심하고 헌신할 수 있는 안전·재해보상망까지. 
+            인사혁신처의 모든 가치와 대국민 서비스를 가장 품격 있는 경험으로 전달합니다.
+          </p>
+
+          <!-- 듀얼 액션 버튼 그룹 -->
+          <div class="mt-10 flex flex-wrap items-center gap-4">
+            <a href="#citizen-services" class="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-brand-600 via-brand-500 to-amber-600 hover:from-brand-500 hover:to-amber-500 text-white font-extrabold text-sm sm:text-base shadow-luxury hover:shadow-glow-gold hover:scale-[1.02] active:scale-[0.98] transition-all duration-300">
+              <i class="fa-solid fa-compass text-amber-200 text-lg"></i>
+              <span>내게 맞는 맞춤 정보 찾기</span>
+            </a>
+            <a href="#core-services" class="inline-flex items-center gap-3 px-7 py-4 rounded-2xl bg-white/[0.06] hover:bg-white/[0.12] backdrop-blur-xl text-white font-bold text-sm sm:text-base border border-white/15 hover:border-white/30 transition-all duration-300">
+              <i class="fa-solid fa-layer-group text-slate-400"></i>
+              <span>4대 핵심 업무 탐색</span>
+            </a>
+          </div>
+
+          <!-- 신뢰 지표 미니 팩트 바 (정교한 보더 및 폰트) -->
+          <div class="mt-14 pt-8 border-t border-white/10 flex items-center gap-8 sm:gap-12 text-white/90">
+            <div>
+              <div class="text-3xl font-black font-display tracking-tight text-white">120<span class="text-brand-400 text-2xl">만+</span></div>
+              <div class="text-xs text-slate-400 mt-1 font-medium tracking-tight">총괄 인사 대상 공직자</div>
+            </div>
+            <div class="w-px h-9 bg-white/15"></div>
+            <div>
+              <div class="text-3xl font-black font-display tracking-tight text-white">100<span class="text-brand-400 text-2xl">%</span></div>
+              <div class="text-xs text-slate-400 mt-1 font-medium tracking-tight">블라인드 공정 선발</div>
+            </div>
+            <div class="w-px h-9 bg-white/15"></div>
+            <div>
+              <div class="text-3xl font-black font-display tracking-tight text-white">30<span class="text-brand-400 text-2xl">만+</span></div>
+              <div class="text-xs text-slate-400 mt-1 font-medium tracking-tight">국가인재DB 전문가</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 우측: 하이테크 3D 글래스 대시보드 위젯 (플로팅 럭셔리) -->
+        <div class="lg:col-span-5 relative">
+          <!-- 배경 글로우 서클 -->
+          <div class="absolute -top-12 -left-12 w-80 h-80 rounded-full border border-white/10 animate-float-smooth pointer-events-none"></div>
+
+          <!-- 메인 하이엔드 글래스 위젯 -->
+          <div class="relative rounded-3xl bg-slate-900/70 backdrop-blur-2xl border border-white/15 p-8 shadow-luxury-dark animate-float-smooth">
+            
+            <!-- 위젯 상단 헤더 -->
+            <div class="flex items-center justify-between pb-6 border-b border-white/10">
+              <div class="flex items-center gap-3.5">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-brand-500/20 to-amber-500/10 border border-brand-500/30 flex items-center justify-center text-brand-400 shadow-inner">
+                  <i class="fa-solid fa-chart-line text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white tracking-tight">인사혁신 미래 지표</h4>
+                  <p class="text-[11px] text-slate-400">대한민국 공직 투명도 실시간 현황</p>
+                </div>
+              </div>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 text-[10px] font-bold">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> 정상 가동
+              </span>
+            </div>
+
+            <!-- 위젯 내부 리스트 (정교한 프로그레스 바) -->
+            <div class="mt-6 space-y-4">
+              <div class="p-4 rounded-2xl bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.08] transition-colors">
+                <div class="flex justify-between items-center text-xs">
+                  <span class="font-bold text-slate-200 flex items-center gap-2">
+                    <i class="fa-solid fa-user-check text-brand-400"></i> 공채 출제 & 블라인드 공정성
+                  </span>
+                  <span class="font-mono font-bold text-brand-300 text-xs">Grade AAA</span>
+                </div>
+                <div class="w-full bg-white/10 h-1.5 rounded-full mt-3 overflow-hidden">
+                  <div class="bg-gradient-to-r from-brand-500 to-amber-400 h-full rounded-full w-[99%]"></div>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.08] transition-colors">
+                <div class="flex justify-between items-center text-xs">
+                  <span class="font-bold text-slate-200 flex items-center gap-2">
+                    <i class="fa-solid fa-brain text-sky-400"></i> AI·디지털 공직 역량 교육 이수
+                  </span>
+                  <span class="font-mono font-bold text-sky-300 text-xs">88.4% 완료</span>
+                </div>
+                <div class="w-full bg-white/10 h-1.5 rounded-full mt-3 overflow-hidden">
+                  <div class="bg-gradient-to-r from-sky-400 to-brand-500 h-full rounded-full w-[88%]"></div>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.08] transition-colors">
+                <div class="flex justify-between items-center text-xs">
+                  <span class="font-bold text-slate-200 flex items-center gap-2">
+                    <i class="fa-solid fa-shield-halved text-rose-400"></i> 공직자 재산등록 & 주식백지신탁
+                  </span>
+                  <span class="font-mono font-bold text-rose-300 text-xs">100% 심사</span>
+                </div>
+                <div class="w-full bg-white/10 h-1.5 rounded-full mt-3 overflow-hidden">
+                  <div class="bg-gradient-to-r from-rose-500 to-amber-500 h-full rounded-full w-[100%]"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 하단 링크 -->
+            <a href="https://www.mpm.go.kr" target="_blank" class="mt-6 w-full py-3.5 rounded-xl bg-white/[0.08] hover:bg-white/15 text-white font-bold text-xs flex items-center justify-center gap-2 border border-white/10 transition-all">
+              <span>인사혁신처 공식 통계연보 바로가기</span>
+              <i class="fa-solid fa-arrow-right text-[11px] text-brand-300"></i>
+            </a>
+          </div>
+
+          <!-- 서브 플로팅 카드 (마음건강 365) -->
+          <div class="absolute -bottom-7 -left-7 bg-white dark:bg-[#111726] p-4.5 rounded-2xl shadow-luxury dark:shadow-luxury-dark border border-slate-200/80 dark:border-white/10 flex items-center gap-3.5 animate-float-subtle hidden sm:flex">
+            <div class="w-11 h-11 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xl">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <div>
+              <div class="text-xs font-bold text-slate-900 dark:text-white">마음건강센터 & 공상 안전망</div>
+              <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">전국 8개 권역 전문 심리 상담 365일 지원</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 기관 소개 (인사혁신처의 비전과 3대 핵심 가치) -->
+  <section id="about" class="py-24 lg:py-32 bg-white dark:bg-noir-950 border-b border-slate-200/80 dark:border-white/[0.06] transition-colors relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-20">
+        <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-brand-500/10 text-brand-600 dark:text-brand-400 border border-brand-500/20 uppercase tracking-widest mb-4">
+          VISION & IDENTITY
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight font-display">
+          인사혁신처는 어떤 기관인가요?
+        </h2>
+        <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg mt-5 leading-relaxed font-normal">
+          인사혁신처는 대한민국 국무총리 직속 중앙인사관장기관으로서, 
+          국가공무원의 <strong class="text-brand-600 dark:text-brand-400 font-bold">선발부터 인재 육성, 복무 윤리, 보수 및 재해 안전망까지</strong> 
+          공직 사회 전반의 체질을 혁신하는 콘트롤 타워입니다.
+        </p>
+      </div>
+
+      <!-- 3열 가치 인포그래픽 카드 (하이엔드 프레스티지) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- 카드 1 -->
+        <div class="group relative rounded-3xl p-8 sm:p-9 bg-slate-50/80 dark:bg-noir-900/60 border border-slate-200/80 dark:border-white/[0.08] luxury-card">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-brand-600 to-amber-500 text-white flex items-center justify-center text-2xl shadow-luxury mb-7 group-hover:scale-105 transition-transform">
+            <i class="fa-solid fa-scale-balanced"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight">공정하고 열린 기회 보장</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            블라인드 채용과 적극적 균형인사 정책을 통해 학력·성별·출신에 차별 없이 오직 실력과 열정으로 국민 누구나 공직의 주역이 될 수 있습니다.
+          </p>
+          <div class="mt-6 flex items-center gap-2 text-xs font-bold text-brand-600 dark:text-brand-400">
+            <span>공정 채용 원칙</span> <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+          </div>
+        </div>
+
+        <!-- 카드 2 -->
+        <div class="group relative rounded-3xl p-8 sm:p-9 bg-slate-50/80 dark:bg-noir-900/60 border border-slate-200/80 dark:border-white/[0.08] luxury-card">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-500 to-brand-600 text-white flex items-center justify-center text-2xl shadow-luxury mb-7 group-hover:scale-105 transition-transform">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight">AI·디지털 미래 인재 육성</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            생성형 AI와 데이터 분석 등 디지털 역량 교육을 전면 도입하고, 국가공무원인재개발원(NHI)을 통해 급변하는 글로벌 위기를 해결할 혁신 리더를 양성합니다.
+          </p>
+          <div class="mt-6 flex items-center gap-2 text-xs font-bold text-amber-600 dark:text-amber-400">
+            <span>디지털 인재 교육</span> <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+          </div>
+        </div>
+
+        <!-- 카드 3 -->
+        <div class="group relative rounded-3xl p-8 sm:p-9 bg-slate-50/80 dark:bg-noir-900/60 border border-slate-200/80 dark:border-white/[0.08] luxury-card">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-rose-600 to-orange-500 text-white flex items-center justify-center text-2xl shadow-luxury mb-7 group-hover:scale-105 transition-transform">
+            <i class="fa-solid fa-shield-heart"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight">청렴한 윤리와 안전한 공직</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            고위공직자 재산등록·주식백지신탁으로 이해충돌을 차단하고, 마음건강 심리상담과 신속 재해보상으로 헌신하는 공무원을 든든하게 지켜줍니다.
+          </p>
+          <div class="mt-6 flex items-center gap-2 text-xs font-bold text-rose-600 dark:text-rose-400">
+            <span>청렴 & 복지 안전망</span> <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 당신에게 필요한 정보는 무엇인가요? (위치: 4대 핵심 업무 위) -->
+  <section id="citizen-services" class="py-24 lg:py-32 bg-[#F6F7FA] dark:bg-[#080B12] border-b border-slate-200/80 dark:border-white/[0.06] transition-colors relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-brand-500/10 text-brand-600 dark:text-brand-400 border border-brand-500/20 uppercase tracking-widest mb-3">
+          PERSONALIZED SERVICE
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight font-display">
+          당신에게 필요한 정보는 무엇인가요?
+        </h2>
+        <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg mt-4 leading-relaxed font-normal">
+          공시생, 민간 전문가, 일반 국민까지 방문 목적에 맞춘 전용 가이드를 확인해보세요.
+        </p>
+      </div>
+
+      <!-- 세련된 필터 탭 네비게이션 (프레스티지 알약 스타일) -->
+      <div class="flex justify-center mb-10">
+        <div class="inline-flex p-1.5 bg-slate-200/80 dark:bg-noir-900/90 rounded-2xl shadow-inner border border-slate-300/50 dark:border-white/[0.08] max-w-full overflow-x-auto" role="tablist">
+          <button onclick="switchTab('tab-jobseeker')" id="btn-tab-jobseeker" class="tab-btn px-7 py-3.5 rounded-xl text-sm font-extrabold bg-white dark:bg-brand-600 text-brand-600 dark:text-white shadow-sm transition-all whitespace-nowrap">
+            <i class="fa-solid fa-book-open-reader mr-2"></i> 공시 준비생 / 수험생
+          </button>
+          <button onclick="switchTab('tab-expert')" id="btn-tab-expert" class="tab-btn px-7 py-3.5 rounded-xl text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-white transition-all whitespace-nowrap">
+            <i class="fa-solid fa-briefcase mr-2"></i> 민간 전문가 / 이직 희망자
+          </button>
+          <button onclick="switchTab('tab-citizen')" id="btn-tab-citizen" class="tab-btn px-7 py-3.5 rounded-xl text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-white transition-all whitespace-nowrap">
+            <i class="fa-solid fa-users mr-2"></i> 일반 시민 / 학부모
+          </button>
+        </div>
+      </div>
+
+      <!-- 탭 컨텐츠 컨테이너 -->
+      <div class="max-w-4xl mx-auto">
+        
+        <!-- 탭 1: 공시 수험생 -->
+        <div id="tab-jobseeker" class="tab-content block bg-white dark:bg-noir-900/90 rounded-3xl p-8 sm:p-12 border border-slate-200/80 dark:border-white/[0.08] shadow-luxury dark:shadow-luxury-dark transition-all duration-300">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-5 pb-7 border-b border-slate-100 dark:border-white/[0.06]">
+            <div>
+              <span class="text-xs font-bold text-brand-600 dark:text-brand-400 bg-brand-500/10 px-3.5 py-1 rounded-full border border-brand-500/20">수험생 원스톱 포털</span>
+              <h3 class="text-2xl font-bold text-slate-900 dark:text-white mt-2.5 tracking-tight">대한민국 공직의 꿈, 가장 공정한 출발선에서</h3>
+            </div>
+            <!-- 요청된 버튼: 국가공무원채용시스템 바로가기 -->
+            <a href="https://www.gosi.kr" target="_blank" class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-brand-600 to-amber-600 hover:from-brand-500 hover:to-amber-500 text-white font-extrabold text-sm shadow-luxury hover:scale-105 transition-all">
+              <span>국가공무원채용시스템 바로가기</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
+          </div>
+
+          <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base mt-6 leading-relaxed">
+            국가공무원 공채 시험의 원서 접수부터 필기시험 일정, 기출문제 공개, 가산점 등록, 최종 합격자 발표까지 모든 절차가 <strong>국가공무원채용시스템(사이버국가고시센터)</strong>을 통해 투명하게 원스톱으로 제공됩니다.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-8">
+            <div class="p-6 rounded-2xl bg-slate-50 dark:bg-white/[0.02] border border-slate-200/60 dark:border-white/[0.06]">
+              <div class="w-11 h-11 rounded-xl bg-brand-500/15 text-brand-600 dark:text-brand-400 flex items-center justify-center text-lg mb-3.5">
+                <i class="fa-solid fa-file-shield"></i>
+              </div>
+              <h4 class="font-bold text-slate-900 dark:text-white text-base">역대 기출문제 & 정답 전면 무료 공개</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                5·7·9급 공채 및 외교관후보자 시험의 모든 연도별 문제와 가답안, 확정정답을 누구나 회원가입 없이 열람할 수 있습니다.
+              </p>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-slate-50 dark:bg-white/[0.02] border border-slate-200/60 dark:border-white/[0.06]">
+              <div class="w-11 h-11 rounded-xl bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center text-lg mb-3.5">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+              </div>
+              <h4 class="font-bold text-slate-900 dark:text-white text-base">공인어학성적 사전등록제 (최장 5년)</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                만료 직전 어학시험 점수(토익, 텝스 등)를 시스템에 사전 등록하면, 시험 유효기간을 최장 5년까지 인정받아 수험 비용을 대폭 절감합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 탭 2: 민간 전문가 -->
+        <div id="tab-expert" class="tab-content hidden bg-white dark:bg-noir-900/90 rounded-3xl p-8 sm:p-12 border border-slate-200/80 dark:border-white/[0.08] shadow-luxury dark:shadow-luxury-dark transition-all duration-300">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-5 pb-7 border-b border-slate-100 dark:border-white/[0.06]">
+            <div>
+              <span class="text-xs font-bold text-amber-600 dark:text-amber-400 bg-amber-500/10 px-3.5 py-1 rounded-full border border-amber-500/20">민간 전문가 영입</span>
+              <h3 class="text-2xl font-bold text-slate-900 dark:text-white mt-2.5 tracking-tight">민간의 뛰어난 전문성으로 국가를 변화시키다</h3>
+            </div>
+            <a href="https://www.hrdb.go.kr" target="_blank" class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-amber-600 to-brand-600 hover:from-amber-500 hover:to-brand-500 text-white font-extrabold text-sm shadow-luxury hover:scale-105 transition-all">
+              <span>국가인재DB 사이트 바로가기</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
+          </div>
+
+          <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base mt-6 leading-relaxed">
+            정부는 IT, 데이터, 우주항공, 바이오, 금융 등 민간 최고 인재들을 정부 국·과장 등 주요 직위에 영입하는 <strong>개방형 직위 및 국가인재데이터베이스(인재DB)</strong>를 적극 운영하고 있습니다.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-8">
+            <div class="p-6 rounded-2xl bg-slate-50 dark:bg-white/[0.02] border border-slate-200/60 dark:border-white/[0.06]">
+              <div class="w-11 h-11 rounded-xl bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center text-lg mb-3.5">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+              </div>
+              <h4 class="font-bold text-slate-900 dark:text-white text-base">정부 맞춤형 헤드헌팅 서비스</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                인사혁신처 전담 헤드헌터가 부처 핵심 직무에 부합하는 최고의 민간 전문가를 직접 발굴하고 공직 입문을 적극 지원합니다.
+              </p>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-slate-50 dark:bg-white/[0.02] border border-slate-200/60 dark:border-white/[0.06]">
+              <div class="w-11 h-11 rounded-xl bg-brand-500/15 text-brand-600 dark:text-brand-400 flex items-center justify-center text-lg mb-3.5">
+                <i class="fa-solid fa-database"></i>
+              </div>
+              <h4 class="font-bold text-slate-900 dark:text-white text-base">국가 주요 위원회 및 공공 임원 후보 등록</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                자신의 학력·경력·연구 성과를 국가인재DB에 직접 등록하여 국가 정책 자문위원 및 공공기관 임원 인선에 참여할 수 있습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 탭 3: 일반 시민 -->
+        <div id="tab-citizen" class="tab-content hidden bg-white dark:bg-noir-900/90 rounded-3xl p-8 sm:p-12 border border-slate-200/80 dark:border-white/[0.08] shadow-luxury dark:shadow-luxury-dark transition-all duration-300">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-5 pb-7 border-b border-slate-100 dark:border-white/[0.06]">
+            <div>
+              <span class="text-xs font-bold text-rose-600 dark:text-rose-400 bg-rose-500/10 px-3.5 py-1 rounded-full border border-rose-500/20">국민 참여 & 감시</span>
+              <h3 class="text-2xl font-bold text-slate-900 dark:text-white mt-2.5 tracking-tight">투명하고 깨끗한 공직 사회, 국민이 함께 만듭니다</h3>
+            </div>
+            <a href="https://www.mpm.go.kr/mpm/info/activeParticipation/activeIntroduce/" target="_blank" class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-rose-600 to-brand-600 hover:from-rose-500 hover:to-brand-500 text-white font-extrabold text-sm shadow-luxury hover:scale-105 transition-all">
+              <span>적극행정온(ON) 포털 바로가기</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
+          </div>
+
+          <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base mt-6 leading-relaxed">
+            인사혁신처는 국민 누구나 공직자의 재산과 정책 결정을 투명하게 감시할 수 있도록 정보를 전면 공개하고, 국민의 일상을 바꾼 모범 공무원을 칭찬하는 국민추천제를 운영합니다.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-8">
+            <div class="p-6 rounded-2xl bg-slate-50 dark:bg-white/[0.02] border border-slate-200/60 dark:border-white/[0.06]">
+              <div class="w-11 h-11 rounded-xl bg-rose-500/15 text-rose-600 dark:text-rose-400 flex items-center justify-center text-lg mb-3.5">
+                <i class="fa-solid fa-eye"></i>
+              </div>
+              <h4 class="font-bold text-slate-900 dark:text-white text-base">고위공직자 정기 재산변동 투명 공개</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                장·차관, 1급 고위공무원 및 단체장의 재산 형성 과정을 매년 전자관보와 공직윤리포털(PETI)을 통해 일반 국민 누구나 검색할 수 있습니다.
+              </p>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-slate-50 dark:bg-white/[0.02] border border-slate-200/60 dark:border-white/[0.06]">
+              <div class="w-11 h-11 rounded-xl bg-brand-500/15 text-brand-600 dark:text-brand-400 flex items-center justify-center text-lg mb-3.5">
+                <i class="fa-solid fa-thumbs-up"></i>
+              </div>
+              <h4 class="font-bold text-slate-900 dark:text-white text-base">적극행정 우수 공무원 국민추천제</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                규제 개선과 민원 해결을 위해 발로 뛴 공무원을 국민이 직접 정부 포상 및 특별승진 대상자로 추천할 수 있습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 인사혁신처가 하는 4가지 핵심 일 (4대 기둥 럭셔리 카드) -->
+  <section id="core-services" class="py-24 lg:py-32 bg-white dark:bg-noir-950 border-b border-slate-200/80 dark:border-white/[0.06] transition-colors relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-20">
+        <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-brand-500/10 text-brand-600 dark:text-brand-400 border border-brand-500/20 uppercase tracking-widest mb-3">
+          4 CORE MISSIONS
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight font-display">
+          인사혁신처가 하는 4가지 핵심 일
+        </h2>
+        <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg mt-4 leading-relaxed font-normal">
+          정부 인재의 채용부터 교육, 청렴 윤리, 복지 안전망까지 4대 축으로 한눈에 살펴봅니다.
+        </p>
+      </div>
+
+      <!-- 4대 기둥 그리드 (디테일과 고급스러움 극대화) -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- MISSION 01: 채용 및 인재발굴 -->
+        <div class="group relative rounded-3xl bg-slate-50/80 dark:bg-noir-900/60 p-8 sm:p-10 border border-slate-200/80 dark:border-white/[0.08] luxury-card flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-brand-500/10 text-brand-700 dark:text-brand-300 border border-brand-500/20">
+                <i class="fa-solid fa-user-check"></i> 채용 & 선발
+              </span>
+              <span class="font-display font-black text-slate-300 dark:text-slate-700 text-xl tracking-wider">01</span>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight">공정하고 열린 공무원 채용 및 우수 인재 발굴</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-7">
+              공직의 출발선에서 편견 없는 공정한 기회를 제공하고, 능력과 잠재력을 갖춘 최고의 인재를 선발합니다.
+            </p>
+
+            <div class="space-y-3.5 bg-white dark:bg-white/[0.02] p-6 rounded-2xl border border-slate-200/60 dark:border-white/[0.06]">
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-brand-500 mt-1 text-sm"></i>
+                <div>
+                  <strong class="text-slate-900 dark:text-white text-sm font-bold">국가공무원 공채 시험 주관</strong>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">5·7·9급 및 외교관후보자 공채 문제 출제, 필기·면접 총괄 운영</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-brand-500 mt-1 text-sm"></i>
+                <div>
+                  <strong class="text-slate-900 dark:text-white text-sm font-bold">사회통합형 균형인사 실천</strong>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">장애인, 저소득층, 지역인재, 이공계 전문가 공직 진출 확대</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-brand-500 mt-1 text-sm"></i>
+                <div>
+                  <strong class="text-slate-900 dark:text-white text-sm font-bold">국가인재데이터베이스(인재DB) 및 정부 헤드헌팅</strong>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">민간의 유능한 최고 전문가를 정부 주요 보직 및 공공기관 임원으로 스카우트</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-slate-200/80 dark:border-white/[0.06] flex items-center justify-between text-xs">
+            <span class="text-slate-500 dark:text-slate-400 font-medium">연계 시스템: 국가공무원채용시스템</span>
+            <a href="https://www.gosi.kr" target="_blank" class="inline-flex items-center gap-1.5 font-bold text-brand-600 dark:text-brand-400 hover:text-brand-700 group">
+              <span>gosi.kr 바로가기</span>
+              <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- MISSION 02: 인재개발 및 역량강화 -->
+        <div class="group relative rounded-3xl bg-slate-50/80 dark:bg-noir-900/60 p-8 sm:p-10 border border-slate-200/80 dark:border-white/[0.08] luxury-card flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20">
+                <i class="fa-solid fa-graduation-cap"></i> 교육 & 역량
+              </span>
+              <span class="font-display font-black text-slate-300 dark:text-slate-700 text-xl tracking-wider">02</span>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight">올바른 공직 가치 확립과 미래지향적 인재 양성</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-7">
+              공직 임용 후에도 시대적 변화에 맞추어 전문성과 창의성을 발휘할 수 있도록 체계적인 역량 개발을 지원합니다.
+            </p>
+
+            <div class="space-y-3.5 bg-white dark:bg-white/[0.02] p-6 rounded-2xl border border-slate-200/60 dark:border-white/[0.06]">
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-amber-500 mt-1 text-sm"></i>
+                <div>
+                  <strong class="text-slate-900 dark:text-white text-sm font-bold">국가공무원인재개발원(NHI) 운영</strong>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">신임 관리자 리더십 및 고위공직자 국정 비전 집중 연수</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-amber-500 mt-1 text-sm"></i>
+                <div>
+                  <strong class="text-slate-900 dark:text-white text-sm font-bold">생성형 AI 및 데이터 기반 직무 교육</strong>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">디지털 정부 전환에 대비한 최신 AI 실무 활용 및 데이터 분석 교육 강화</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-amber-500 mt-1 text-sm"></i>
+                <div>
+                  <strong class="text-slate-900 dark:text-white text-sm font-bold">국민 중심 공직가치 체계화</strong>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">애국심, 헌신, 청렴성, 적극행정 마인드의 일상적 실천 지원</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-slate-200/80 dark:border-white/[0.06] flex items-center justify-between text-xs">
+            <span class="text-slate-500 dark:text-slate-400 font-medium">연계 플랫폼: 국가 이러닝 나라배움터</span>
+            <a href="https://e-learning.nhi.go.kr" target="_blank" class="inline-flex items-center gap-1.5 font-bold text-amber-600 dark:text-amber-400 hover:text-amber-700 group">
+              <span>나라배움터 포털</span>
+              <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- MISSION 03: 공직윤리 및 복무·청렴 -->
+        <div class="group relative rounded-3xl bg-slate-50/80 dark:bg-noir-900/60 p-8 sm:p-10 border border-slate-200/80 dark:border-white/[0.08] luxury-card flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-rose-500/10 text-rose-700 dark:text-rose-300 border border-rose-500/20">
+                <i class="fa-solid fa-shield-halved"></i> 윤리 & 청렴
+              </span>
+              <span class="font-display font-black text-slate-300 dark:text-slate-700 text-xl tracking-wider">03</span>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight">투명하고 깨끗한 공직윤리 확립과 엄정한 복무 관리</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-7">
+              공직자의 이해충돌을 사전에 차단하고 부정부패를 근절하여 국민의 온전한 신뢰를 받는 공직 사회를 건설합니다.
+            </p>
+
+            <div class="space-y-3.5 bg-white dark:bg-white/[0.02] p-6 rounded-2xl border border-slate-200/60 dark:border-white/[0.06]">
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-rose-500 mt-1 text-sm"></i>
+                <div>
+                  <strong class="text-slate-900 dark:text-white text-sm font-bold">공직자 재산등록·공개 및 주식백지신탁</strong>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">고위공직자 재산 형성 투명성 검증 및 직무 연관 주식 매각·신탁 심사</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-rose-500 mt-1 text-sm"></i>
+                <div>
+                  <strong class="text-slate-900 dark:text-white text-sm font-bold">퇴직공직자 민관유착 방지 취업 심사</strong>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">퇴직 후 업무 유관 기관 재취업 엄격 심사로 전관예우·특혜 방지</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-rose-500 mt-1 text-sm"></i>
+                <div>
+                  <strong class="text-slate-900 dark:text-white text-sm font-bold">공직 복무기강 확립 및 비위 징계 제도</strong>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">성실·친절 의무 이행 지도 및 비위 행위에 대한 일벌백계 문책</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-slate-200/80 dark:border-white/[0.06] flex items-center justify-between text-xs">
+            <span class="text-slate-500 dark:text-slate-400 font-medium">연계 시스템: 공직윤리시스템 (PETI)</span>
+            <a href="https://www.peti.go.kr" target="_blank" class="inline-flex items-center gap-1.5 font-bold text-rose-600 dark:text-rose-400 hover:text-rose-700 group">
+              <span>PETI 바로가기</span>
+              <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- MISSION 04: 인사제도 및 재해보상·보수·복지 -->
+        <div class="group relative rounded-3xl bg-slate-50/80 dark:bg-noir-900/60 p-8 sm:p-10 border border-slate-200/80 dark:border-white/[0.08] luxury-card flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-brand-500/10 text-brand-700 dark:text-brand-300 border border-brand-500/20">
+                <i class="fa-solid fa-hand-holding-heart"></i> 인사제도 & 복지
+              </span>
+              <span class="font-display font-black text-slate-300 dark:text-slate-700 text-xl tracking-wider">04</span>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight">합리적 보수·복지 제도와 든든한 재해 안전망</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-7">
+              공무원이 오직 국민에게 헌신할 수 있도록 합리적인 보수 체계와 일·가정 양립, 안전한 일터를 보장합니다.
+            </p>
+
+            <div class="space-y-3.5 bg-white dark:bg-white/[0.02] p-6 rounded-2xl border border-slate-200/60 dark:border-white/[0.06]">
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-brand-500 mt-1 text-sm"></i>
+                <div>
+                  <strong class="text-slate-900 dark:text-white text-sm font-bold">합리적 보수(월급)·성과급 및 수당 제도</strong>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">물가와 민간 보수 수준을 고려한 공무원 처우 개선 및 규정 개정</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-brand-500 mt-1 text-sm"></i>
+                <div>
+                  <strong class="text-slate-900 dark:text-white text-sm font-bold">공무원 재해보상 및 마음건강센터 운영</strong>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">공무상 부상·질병에 대한 신속 공상 처리와 전국 8개 센터 무료 심리 상담</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-brand-500 mt-1 text-sm"></i>
+                <div>
+                  <strong class="text-slate-900 dark:text-white text-sm font-bold">유연근무제 및 일·가정 양립 혁신</strong>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">시차출퇴근제, 육아시간 확대, 스마트워크 지원으로 가족 친화적 조직 문화 구현</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-slate-200/80 dark:border-white/[0.06] flex items-center justify-between text-xs">
+            <span class="text-slate-500 dark:text-slate-400 font-medium">연계 기관: 공무원연금공단</span>
+            <a href="https://www.geps.or.kr" target="_blank" class="inline-flex items-center gap-1.5 font-bold text-brand-600 dark:text-brand-400 hover:text-brand-700 group">
+              <span>공무원연금공단 바로가기</span>
+              <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. 일반인을 위한 FAQ (자주 묻는 질문 아코디언) -->
+  <section id="faq" class="py-24 lg:py-32 bg-[#F6F7FA] dark:bg-[#080B12] border-b border-slate-200/80 dark:border-white/[0.06] transition-colors relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16">
+        <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-brand-500/10 text-brand-600 dark:text-brand-400 border border-brand-500/20 uppercase tracking-widest mb-3">
+          FAQ
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight font-display">
+          궁금증 해결! 알쏭달쏭 질문 BEST 4
+        </h2>
+        <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg mt-4 font-normal">일반 국민들이 가장 많이 헷갈려하는 핵심 질문을 모았습니다.</p>
+      </div>
+
+      <div class="space-y-4">
+        
+        <!-- Q1 -->
+        <div class="bg-white dark:bg-noir-900/90 rounded-2xl border border-slate-200/80 dark:border-white/[0.08] overflow-hidden shadow-sm hover:border-brand-500/40 transition">
+          <button onclick="toggleFaq(1)" class="w-full px-7 py-5 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center hover:bg-slate-50 dark:hover:bg-white/[0.02] transition">
+            <span class="flex items-center gap-3.5">
+              <span class="text-brand-600 dark:text-brand-400 font-display font-black text-xl">Q1.</span>
+              <span class="text-base sm:text-lg tracking-tight">행정안전부와 인사혁신처는 어떤 점이 다른가요?</span>
+            </span>
+            <i id="faq-icon-1" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+          </button>
+          <div id="faq-ans-1" class="hidden px-7 pb-6 pt-1 text-sm text-slate-600 dark:text-slate-300 border-t border-slate-100 dark:border-white/[0.06] leading-relaxed bg-slate-50/50 dark:bg-white/[0.01]">
+            <strong>행정안전부</strong>는 정부의 정부조직 편성, 지방자치단체 지원, 재난 및 안전관리를 총괄하는 부처입니다. 반면 <strong>인사혁신처</strong>는 행정부 전체 공무원들의 시험 선발, 승진·보직 등 인사제도 설계, 보수와 연금, 공직자 재산등록과 같은 '사람(공무원)'에 대한 모든 관리를 전문적으로 전담하는 총괄 기관입니다.
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="bg-white dark:bg-noir-900/90 rounded-2xl border border-slate-200/80 dark:border-white/[0.08] overflow-hidden shadow-sm hover:border-brand-500/40 transition">
+          <button onclick="toggleFaq(2)" class="w-full px-7 py-5 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center hover:bg-slate-50 dark:hover:bg-white/[0.02] transition">
+            <span class="flex items-center gap-3.5">
+              <span class="text-brand-600 dark:text-brand-400 font-display font-black text-xl">Q2.</span>
+              <span class="text-base sm:text-lg tracking-tight">지방직 공무원 시험도 인사혁신처가 주관하나요?</span>
+            </span>
+            <i id="faq-icon-2" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+          </button>
+          <div id="faq-ans-2" class="hidden px-7 pb-6 pt-1 text-sm text-slate-600 dark:text-slate-300 border-t border-slate-100 dark:border-white/[0.06] leading-relaxed bg-slate-50/50 dark:bg-white/[0.01]">
+            지방직 공무원 채용의 최종 관리 주체는 각 시·도 지방자치단체입니다. 다만, 문제 출제의 공정성과 표준화를 위해 <strong>인사혁신처가 각 시·도의 위탁을 받아 필기시험 문제를 일괄 출제</strong>하고 있습니다. 원서접수는 각 지자체 원서접수센터에서 진행됩니다.
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="bg-white dark:bg-noir-900/90 rounded-2xl border border-slate-200/80 dark:border-white/[0.08] overflow-hidden shadow-sm hover:border-brand-500/40 transition">
+          <button onclick="toggleFaq(3)" class="w-full px-7 py-5 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center hover:bg-slate-50 dark:hover:bg-white/[0.02] transition">
+            <span class="flex items-center gap-3.5">
+              <span class="text-brand-600 dark:text-brand-400 font-display font-black text-xl">Q3.</span>
+              <span class="text-base sm:text-lg tracking-tight">'공무원 재산등록'은 일반인도 다 찾아볼 수 있나요?</span>
+            </span>
+            <i id="faq-icon-3" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+          </button>
+          <div id="faq-ans-3" class="hidden px-7 pb-6 pt-1 text-sm text-slate-600 dark:text-slate-300 border-t border-slate-100 dark:border-white/[0.06] leading-relaxed bg-slate-50/50 dark:bg-white/[0.01]">
+            모든 공무원이 공개 대상은 아닙니다. 4급(서기관) 이상 등 일정 직급 이상은 재산을 의무적으로 <strong>'등록'</strong>하고, 장·차관, 1급 공무원, 지방자치단체장 등 고위공직자의 재산은 매년 전자관보 및 <strong>공직윤리시스템(PETI)</strong>을 통해 일반 국민에게 투명하게 <strong>'공개'</strong>됩니다.
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="bg-white dark:bg-noir-900/90 rounded-2xl border border-slate-200/80 dark:border-white/[0.08] overflow-hidden shadow-sm hover:border-brand-500/40 transition">
+          <button onclick="toggleFaq(4)" class="w-full px-7 py-5 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center hover:bg-slate-50 dark:hover:bg-white/[0.02] transition">
+            <span class="flex items-center gap-3.5">
+              <span class="text-brand-600 dark:text-brand-400 font-display font-black text-xl">Q4.</span>
+              <span class="text-base sm:text-lg tracking-tight">공무원들의 마음치유나 재해보상도 챙기나요?</span>
+            </span>
+            <i id="faq-icon-4" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+          </button>
+          <div id="faq-ans-4" class="hidden px-7 pb-6 pt-1 text-sm text-slate-600 dark:text-slate-300 border-t border-slate-100 dark:border-white/[0.06] leading-relaxed bg-slate-50/50 dark:bg-white/[0.01]">
+            네, 맞습니다! 민원 현장이나 재난 현장에서 스트레스를 받는 공직자들을 위해 전국 8개 권역에 <strong>'마음건강센터'</strong>를 운영하여 전문 심리상담을 무료로 제공하며, 공무 수행 중 부상이나 질병에 대해 신속하게 치료비와 보상금을 지급하는 공무원재해보상 제도를 책임지고 있습니다.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. 인사혁신처 주요 대국민 패밀리 서비스 (Quick Links) -->
+  <section id="quick-links" class="py-24 bg-white dark:bg-noir-950 border-b border-slate-200/80 dark:border-white/[0.06] transition-colors relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-14">
+        <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-brand-500/10 text-brand-600 dark:text-brand-400 border border-brand-500/20 uppercase tracking-widest mb-3">
+          FAMILY SERVICES
+        </span>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          인사혁신처 공식 패밀리 포털
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">
+        
+        <a href="https://www.gosi.kr" target="_blank" class="p-6 rounded-3xl bg-slate-50/80 dark:bg-noir-900/60 border border-slate-200/80 dark:border-white/[0.08] hover:border-brand-500/50 hover:shadow-luxury transition-all text-center group">
+          <div class="w-13 h-13 rounded-2xl bg-brand-500/15 text-brand-600 dark:text-brand-400 flex items-center justify-center mx-auto mb-3.5 group-hover:scale-110 group-hover:bg-brand-600 group-hover:text-white transition-all">
+            <i class="fa-solid fa-file-pen text-xl"></i>
+          </div>
+          <div class="font-bold text-xs sm:text-sm text-slate-800 dark:text-slate-200">국가공무원채용</div>
+          <div class="text-[11px] text-slate-400 dark:text-slate-500 mt-1">시험 접수·합격 발표</div>
+        </a>
+
+        <a href="https://www.mpm.go.kr" target="_blank" class="p-6 rounded-3xl bg-slate-50/80 dark:bg-noir-900/60 border border-slate-200/80 dark:border-white/[0.08] hover:border-brand-500/50 hover:shadow-luxury transition-all text-center group">
+          <div class="w-13 h-13 rounded-2xl bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center mx-auto mb-3.5 group-hover:scale-110 group-hover:bg-amber-600 group-hover:text-white transition-all">
+            <i class="fa-solid fa-landmark text-xl"></i>
+          </div>
+          <div class="font-bold text-xs sm:text-sm text-slate-800 dark:text-slate-200">인사혁신처 대표</div>
+          <div class="text-[11px] text-slate-400 dark:text-slate-500 mt-1">공식 정책·보도자료</div>
+        </a>
+
+        <a href="https://www.hrdb.go.kr" target="_blank" class="p-6 rounded-3xl bg-slate-50/80 dark:bg-noir-900/60 border border-slate-200/80 dark:border-white/[0.08] hover:border-brand-500/50 hover:shadow-luxury transition-all text-center group">
+          <div class="w-13 h-13 rounded-2xl bg-brand-500/15 text-brand-600 dark:text-brand-400 flex items-center justify-center mx-auto mb-3.5 group-hover:scale-110 group-hover:bg-brand-600 group-hover:text-white transition-all">
+            <i class="fa-solid fa-address-card text-xl"></i>
+          </div>
+          <div class="font-bold text-xs sm:text-sm text-slate-800 dark:text-slate-200">국가인재DB</div>
+          <div class="text-[11px] text-slate-400 dark:text-slate-500 mt-1">전문 인재 등록</div>
+        </a>
+
+        <a href="https://e-learning.nhi.go.kr" target="_blank" class="p-6 rounded-3xl bg-slate-50/80 dark:bg-noir-900/60 border border-slate-200/80 dark:border-white/[0.08] hover:border-brand-500/50 hover:shadow-luxury transition-all text-center group">
+          <div class="w-13 h-13 rounded-2xl bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center mx-auto mb-3.5 group-hover:scale-110 group-hover:bg-amber-600 group-hover:text-white transition-all">
+            <i class="fa-solid fa-laptop-code text-xl"></i>
+          </div>
+          <div class="font-bold text-xs sm:text-sm text-slate-800 dark:text-slate-200">나라배움터</div>
+          <div class="text-[11px] text-slate-400 dark:text-slate-500 mt-1">이러닝 교육 포털</div>
+        </a>
+
+        <a href="https://www.peti.go.kr" target="_blank" class="p-6 rounded-3xl bg-slate-50/80 dark:bg-noir-900/60 border border-slate-200/80 dark:border-white/[0.08] hover:border-brand-500/50 hover:shadow-luxury transition-all text-center group">
+          <div class="w-13 h-13 rounded-2xl bg-rose-500/15 text-rose-600 dark:text-rose-400 flex items-center justify-center mx-auto mb-3.5 group-hover:scale-110 group-hover:bg-rose-600 group-hover:text-white transition-all">
+            <i class="fa-solid fa-stamp text-xl"></i>
+          </div>
+          <div class="font-bold text-xs sm:text-sm text-slate-800 dark:text-slate-200">공직윤리시스템</div>
+          <div class="text-[11px] text-slate-400 dark:text-slate-500 mt-1">재산등록·취업심사</div>
+        </a>
+
+        <a href="https://www.mpm.go.kr/mpm/info/activeParticipation/activeIntroduce/" target="_blank" class="p-6 rounded-3xl bg-slate-50/80 dark:bg-noir-900/60 border border-slate-200/80 dark:border-white/[0.08] hover:border-brand-500/50 hover:shadow-luxury transition-all text-center group">
+          <div class="w-13 h-13 rounded-2xl bg-orange-500/15 text-brand-600 dark:text-brand-400 flex items-center justify-center mx-auto mb-3.5 group-hover:scale-110 group-hover:bg-brand-600 group-hover:text-white transition-all">
+            <i class="fa-solid fa-award text-xl"></i>
+          </div>
+          <div class="font-bold text-xs sm:text-sm text-slate-800 dark:text-slate-200">적극행정 ON</div>
+          <div class="text-[11px] text-slate-400 dark:text-slate-500 mt-1">국민추천·우수사례</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. 최상위 럭셔리 푸터 -->
+  <footer class="bg-[#05070C] text-slate-400 text-xs py-16 mt-auto border-t border-white/[0.06]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10">
+        
+        <!-- 기관 정보 -->
+        <div>
+          <div class="flex items-center gap-3.5 mb-3.5">
+            <img src="logo_mpm_white.png" alt="인사혁신처" class="h-9 w-auto object-contain">
+            <span class="text-xs text-brand-400 font-bold border-l border-slate-800 pl-3.5">국민 공감 미래 인사 혁신 포털</span>
+          </div>
+          <p class="text-slate-400 leading-relaxed max-w-2xl text-[12px]">
+            (우 30102) 세종특별자치시 정부2청사로 13 (나성동) 정부세종2청사 17동 인사혁신처<br>
+            대표전화: 044-201-8000 | 정부민원안내 콜센터: 110 (유료)<br>
+            본 포털은 일반 국민의 알권리 증진과 디지털 공직 경험 혁신을 위해 제작된 반응형 정보 포털입니다.
+          </p>
+        </div>
+
+        <!-- 공식 SNS 채널 링크 -->
+        <div class="flex items-center gap-3">
+          <a href="https://www.youtube.com/user/mpmgo" target="_blank" class="w-10 h-10 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-300 hover:text-red-400 hover:border-red-500/40 hover:bg-white/[0.08] transition-all" title="공식 유튜브">
+            <i class="fa-brands fa-youtube text-base"></i>
+          </a>
+          <a href="https://blog.naver.com/mirae_saram" target="_blank" class="w-10 h-10 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-300 hover:text-emerald-400 hover:border-emerald-500/40 hover:bg-white/[0.08] transition-all" title="공식 블로그">
+            <i class="fa-solid fa-blog text-base"></i>
+          </a>
+          <a href="https://www.facebook.com/mpmkorea" target="_blank" class="w-10 h-10 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-300 hover:text-blue-400 hover:border-blue-500/40 hover:bg-white/[0.08] transition-all" title="공식 페이스북">
+            <i class="fa-brands fa-facebook-f text-base"></i>
+          </a>
+          <a href="https://www.instagram.com/mpmkorea" target="_blank" class="w-10 h-10 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-300 hover:text-pink-400 hover:border-pink-500/40 hover:bg-white/[0.08] transition-all" title="공식 인스타그램">
+            <i class="fa-brands fa-instagram text-base"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-12 pt-7 border-t border-white/[0.06] flex flex-col sm:flex-row justify-between items-center text-slate-500 text-[11px] gap-3">
+        <p>&copy; 2026 Ministry of Personnel Management Portal. Crafted with Distinction.</p>
+        <p class="flex items-center gap-4">
+          <a href="https://www.mpm.go.kr" target="_blank" class="hover:text-slate-300 transition-colors">개인정보처리방침</a>
+          <span>|</span>
+          <a href="https://www.mpm.go.kr" target="_blank" class="hover:text-slate-300 transition-colors">저작권 정책</a>
+          <span>|</span>
+          <a href="https://www.mpm.go.kr" target="_blank" class="hover:text-slate-300 transition-colors">이메일무단수집거부</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 인터랙티브 스크립트 -->
+  <script>
+    // 1. 야간 모드 토글 (로컬 스토리지 및 UI 동기화)
+    function initTheme() {
+      if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        updateThemeUI(true);
+      } else {
+        document.documentElement.classList.remove('dark');
+        updateThemeUI(false);
+      }
+    }
+
+    function toggleDarkMode() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      if (isDark) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
+      updateThemeUI(isDark);
+    }
+
+    function updateThemeUI(isDark) {
+      const themeIcon = document.getElementById('themeIcon');
+      const themeText = document.getElementById('themeText');
+
+      if (isDark) {
+        if (themeIcon) themeIcon.className = 'fa-solid fa-sun text-sm text-amber-300';
+        if (themeText) themeText.textContent = '주간 모드';
+      } else {
+        if (themeIcon) themeIcon.className = 'fa-solid fa-moon text-sm text-slate-600';
+        if (themeText) themeText.textContent = '야간 모드';
+      }
+    }
+
+    // 초기 테마 로드
+    initTheme();
+
+    // 2. 모바일 메뉴 토글
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    function toggleMobileMenu() {
+      mobileMenu.classList.add('hidden');
+    }
+
+    // 3. 탭 전환 스크립트
+    function switchTab(tabId) {
+      // 모든 탭 컨텐츠 숨김
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(content => content.classList.add('hidden'));
+
+      // 대상 컨텐츠 활성화
+      const activeContent = document.getElementById(tabId);
+      if (activeContent) {
+        activeContent.classList.remove('hidden');
+      }
+
+      // 버튼 디자인 상태 변경
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-white', 'dark:bg-brand-600', 'text-brand-600', 'dark:text-white', 'shadow-sm', 'font-extrabold');
+        btn.classList.add('text-slate-600', 'dark:text-slate-300', 'font-semibold');
+      });
+
+      const activeBtn = document.getElementById('btn-' + tabId);
+      if (activeBtn) {
+        activeBtn.classList.add('bg-white', 'dark:bg-brand-600', 'text-brand-600', 'dark:text-white', 'shadow-sm', 'font-extrabold');
+        activeBtn.classList.remove('text-slate-600', 'dark:text-slate-300', 'font-semibold');
+      }
+    }
+
+    // 4. FAQ 아코디언 토글
+    function toggleFaq(num) {
+      const ans = document.getElementById('faq-ans-' + num);
+      const icon = document.getElementById('faq-icon-' + num);
+      if (ans.classList.contains('hidden')) {
+        ans.classList.remove('hidden');
+        icon.classList.add('rotate-180', 'text-brand-600');
+      } else {
+        ans.classList.add('hidden');
+        icon.classList.remove('rotate-180', 'text-brand-600');
+      }
+    }
+  </script>
+</body>
+</html>
